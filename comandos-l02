@@ -1,0 +1,73 @@
+    1  cd l02
+    2  npm init 
+    3  npm init indez.js
+    4  npm init 
+    5  ls
+    6  npm init 
+    7  npm instal body-parser --save
+    8  npm install body-parser --save
+    9  npm instal nedb --save
+   10  npm install nedb --save
+   11  cd...
+   12  npm install bower -g
+   13  c9 public 
+   14  touch public 
+   15  c9 public 
+   16  cd public 
+   17  cd .public
+   18  cd public/
+   19  ls
+   20  ls public
+   21  cd public 
+   22  cd public/
+   23  mkdir public 
+   24  ls
+   25  mkdir public
+   26  ls
+   27  bower install bootstrap
+   28  bowe install angular
+   29  bower install angular
+   30  git init 
+   31  cd ..
+   32  git init
+   33  touch .gitignore node_modules
+   34  git add.
+   35  git add .
+   36  git commit
+   37  cd lO2
+   38  LS
+   39  ls
+   40  cd l02/
+   41  git init
+   42  touch .gitignore node_modules, bower components 
+   43  git add .
+   44  git commit Primera version
+   45  git commit 
+   46  git init
+   47  ls
+   48  cd l02/
+   49  git init
+   50  cd..
+   51  cd ..
+   52  l03/
+   53  cd l03/
+   54  ls
+   55  git init 
+   56  ls -la
+   57  git add package.json index.js index.html contacts.json .gitignore public/
+   58  git add package.json index.js index.html contacts.json  public/
+   59  git commit -m "Initial version"
+   60  git remote add origin https://github.com/olgborvil/AWS1718.git
+   61  git push -u origin master
+   62  add package.json 
+   63  git init 
+   64  git add package.json 
+   65  git commit -m "Package Json modified"
+   66  git push -u origin master
+   67  git add package.json 
+   68  git commit -m "Version 2"
+   69  git push -u origin master 
+   70  git pull 
+   71  rm -rf*
+   72  rm -rf *
+   73  history > comandos-l02

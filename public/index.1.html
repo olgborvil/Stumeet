@@ -1,0 +1,190 @@
+<html ng-app="ContactListApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Stumeet</title>
+        <!-- Mobile specific metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+        <!-- Import google fonts - Heading first/ text second -->
+        
+        <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href="public/css/icons.css" rel="stylesheet" />
+        <link href="css/bootstrap.css" rel="stylesheet" />
+        <link href="css/plugins.css" rel="stylesheet" />
+        <link href="css/main.css" rel="stylesheet" />
+        <link href="css/custom.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="icon" href="img/ico/favicon.ico" type="image/png">
+    
+      
+    </head>
+    <body ng-controller="ListCtrl">
+      
+        <!-- .page-navbar -->
+        <div id="header" class="page-navbar">
+    
+            <div id="navbar-no-collapse" class="navbar-no-collapse">
+                <!-- top left nav -->
+                <ul class="nav navbar-nav">
+                    <li class="toggle-sidebar">
+                        <a href="#">
+                            <i></i> <img src="static/img/logoSmall3.png"></img>
+                            <span class="sr-only">Collapse sidebar</span>
+                          
+                        </a>
+                       
+                       </li> 
+                       <li>
+                        <a href="#" class="reset-layout tipB" title="Reset panel position for this page"><i> 
+                       
+                        
+                   
+                    </li>
+                   
+                </ul>
+                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown">
+                             <output id="list" align="left"  class="hidden-md hidden-sm"></output></i></a>
+                        </a>
+                          <button onclick="document.getElementById('files').click()">File upload</button>
+                            <input type='file' id="files" style="display:none">
+            </div>
+            <!-- / collapse -->
+        </div>
+    
+        <div id="wrapper">
+           
+<div class="page-content sidebar-page right-sidebar-page clearfix ">
+            <!-- .page-content-wrapper -->
+            <div class="page-content-wrapper ">
+                <div class="page-content-inner ">
+                    <!-- Start .page-content-inner -->
+                    <div id="page-header " class="clearfix ">
+                        <div class="page-header ">
+                            <h2>View people</h2>
+                            <span class="txt ">Here the details of people could be interested on you!</span>
+                        </div>
+
+                    </div>
+
+
+
+                    <p class="text-center container mt-4 " ng-show="!contacts ">
+                        <div class="card " ng-repeat="contact in contacts " ng-cloak>
+                            <div class="panel-body ">
+                                <div class="row profile ">
+                                    <div class="col-md-6 ">
+                                        <h4 ng-show="contacts "><b>{{contacts[$index].name}}</b></h4>
+                                        <img ng-show="contacts " src={{contacts[$index].photo}} alt="Avatar " height="366 " width="288 ">
+                                        <p></p>
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <br>
+                                        <br>
+                                        <h5 ng-show="contacts "> <b>Username:</b> {{contacts[$index].username}}</h5>
+                                        <h5 ng-show="contacts "> <b>Phone:</b> {{contacts[$index].phone}}</h5>
+                                        <h5 ng-show="contacts "> <b>E-mail:</b> {{contacts[$index].mail}}</h5>
+                                        <h5 ng-show="contacts "> <b>Age:</b> {{contacts[$index].age}}</h5>
+                                        <h5 ng-show="contacts "> <b>Job:</b> {{contacts[$index].job}}</h5>
+                                        <h5 ng-show="contacts "> <b>Hobbies:</b> {{contacts[$index].hobbies}}</h5>
+                                        <h5 ng-show="contacts "> <b>Description:</b> {{contacts[$index].description}}</h5>
+
+
+
+
+                                        <br>
+                                        <br>
+                                        <br>
+
+                                        <a class="btn btn-success btn-lg " target="_blank " ng-href="{{copyContacts[$index].location}} " ng-mousedown="openTab() "><i class="fa fa-globe "> </i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button type="button " class="btn btn-info btn-lg " ng-click="toggleEditFields() "><i class="fa fa-phone "></i> Call</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button type="button " class="btn btn-danger btn-lg " ng-click="deleteResearcher(researcher.ORCID) "> <i class="fa fa-heart "></i> Like</button>
+
+                                    </div>`
+                                </div>`
+                            </div>`
+                        </div>`
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+            <!-- / page-sidebar -->
+            <!-- Start #right-sidebar -->
+           
+            <!-- End #right-sidebar -->
+            <!-- .page-content -->
+          
+            <!-- / page-content -->
+        </div>
+        <!-- / #wrapper -->
+        <div id="footer" class="clearfix sidebar-page right-sidebar-page">
+            <!-- Start #footer  -->
+            <p class="pull-left">
+                Copyrights &copy; 2014 <a href="http://suggeelson.com/" class="color-blue strong" target="_blank">SuggeElson</a>. All rights reserved.
+            </p>
+            <p class="pull-right">
+                <a href="#" class="mr5">Terms of use</a>
+                |
+                <a href="#" class="ml5 mr25">Privacy police</a>
+            </p>
+        </div>
+        <!-- End #footer  -->
+        <!-- Back to top -->
+        <div id="back-to-top"><a href="#">Back to Top</a>
+        </div>
+        <!-- Javascripts -->
+        <!-- Load pace first -->
+         <script>
+                            if (window.FileReader) {
+                                function handleFileSelect(evt) {
+                                    var files = evt.target.files;
+                                    var f = files[0];
+                                    var reader = new FileReader();
+
+                                    reader.onload = (function(theFile) {
+                                        return function(e) {
+                                            document.getElementById('list').innerHTML = ['<img src="', e.target.result, '" title="', theFile.name, '" width="70 "/>'].join('');
+                                        };
+                                    })(f);
+
+                                    reader.readAsDataURL(f);
+                                }
+                            }
+                            else {
+                                alert('This browser does not support FileReader');
+                            }
+                            document.getElementById('files').addEventListener('change', handleFileSelect, false);
+                        </script>
+        <script src="/..plugins/core/pace/pace.min.js"></script>
+        <!-- Important javascript libs(put in all pages) -->
+       
+        <script>
+        window.jQuery || document.write('<script src="js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')
+        </script>
+           <!-- Core plugins ( not remove ) -->
+        <script src="../js/libs/modernizr.custom.js"></script>
+          <!-- Important javascript libs(put in all pages) -->
+         <script>
+        window.jQuery || document.write('<script src="../js/libs/jquery-2.1.1.min.js">\x3C/script>')
+        </script>
+        <script type="text/javascript" src="contact-list-app.js"></script>
+        <script type="text/javascript" src="list-ctrl.js"></script>
+        <!-- Bootstrap plugins -->
+        <script src="../js/bootstrap/bootstrap.js"></script>
+        <!-- Core plugins ( not remove ) -->
+       
+        <!-- Handle responsive view functions -->
+        <script src="../js/jRespond.min.js"></script>
+        <!-- Custom scroll for sidebars,tables and etc. -->
+        <script src="../plugins/core/slimscroll/jquery.slimscroll.min.js"></script>   
+        <script src="../js/jquery.dynamic.js"></script>
+        <script src="../js/main.js"> </script>
+      
+    </body>
+</html>

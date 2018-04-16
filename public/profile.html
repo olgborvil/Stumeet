@@ -1,0 +1,542 @@
+<html ng-app="ContactListApp">
+
+<head>
+    <title>
+        Contact List
+    </title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+    <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="contact-list-app.js"></script>
+    <script type="text/javascript" src="list-ctrl.js"></script>
+    <!-- Icons -->
+    <link href="css/icons.css" rel="stylesheet" />
+    <!-- Bootstrap stylesheets (included template modifications) -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <!-- Main stylesheets (template main css file) -->
+    <link href="css/main.css" rel="stylesheet" />
+    <!-- Plugins stylesheets (all plugin custom css) -->
+    <link href="css/plugins.css" rel="stylesheet" />
+    <!-- Custom stylesheets ( Put your own changes here ) -->
+    <link href="css/custom.css" rel="stylesheet" />
+    <!-- Fav and touch icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="img/ico/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/Stumeet-daw/main.js"></script>
+</head>
+
+<body>
+
+
+        <div id="header" class="page-navbar">
+            <!-- .navbar-brand -->
+            <a href="index.html" class="navbar-brand hidden-xs hidden-sm">
+                <img src="static/img/logoSmall2.png" class="logo hidden-xs" alt="Dynamic logo">
+                <img src="static/img/logoSmall2.png" class="logo-sm hidden-lg hidden-md" alt="Dynamic logo">
+            </a>
+            <!-- / navbar-brand -->
+            <!-- .no-collapse -->
+            <div id="navbar-no-collapse" class="navbar-no-collapse">
+                <!-- top left nav -->
+                <ul class="nav navbar-nav">
+                    <li class="toggle-sidebar">
+                        <a href="#">
+                            <i class="fa fa-reorder"></i>
+                            <span class="sr-only">Collapse sidebar</span>
+                        </a>
+                    </li>
+                   
+                </ul>
+                <!-- / top left nav -->
+                <!-- top right nav -->
+         
+                <!-- / top right nav -->
+            </div>
+            <!-- / collapse -->
+        </div>
+        <!-- / page-navbar -->
+        <!-- #wrapper -->
+        <div id="wrapper">
+            <!-- .page-sidebar -->
+            <aside id="sidebar" class="page-sidebar hidden-md hidden-sm hidden-xs">
+                <!-- Start .sidebar-inner -->
+                <div class="sidebar-inner">
+                    <!-- Start .sidebar-scrollarea -->
+                    <div class="sidebar-scrollarea">
+                        <!--  .sidebar-panel -->
+                        <div class="sidebar-panel">
+                            <h5 class="sidebar-panel-title">Stumeet</h5>
+                        </div>
+                        <!-- / .sidebar-panel -->
+                       
+                        
+                        <!-- .side-nav -->
+                        <div class="side-nav">
+                            <ul class="nav">
+                                <li><a ><i class="fa fa-user"></i><span class="txt">Megan Fox</span></a>
+                                <output id="list" align="left"  class="hidden-md hidden-sm"></output>
+                                </li>
+                                  
+                        <br>
+                        <div class="m.15">
+                            <button onclick="document.getElementById('files').click()">File upload</button>
+                            <input type='file' id="files" style="display:none">
+
+                        </div>
+                               
+                               </ul>
+                                    
+                        </div>
+                        <!-- / side-nav -->
+                        <!--  .sidebar-panel -->
+                        
+                    </div>
+                    <!-- End .sidebar-scrollarea -->
+                </div>
+                <!-- End .sidebar-inner -->
+            </aside>
+
+        <!-- .page-content -->
+        <div class="page-content sidebar-page right-sidebar-page clearfix">
+            <!-- .page-content-wrapper -->
+            <div class="page-content-wrapper">
+                <div class="page-content-inner">
+                    <!-- Start .page-content-inner -->
+                    <div id="page-header" class="clearfix">
+                        <div class="page-header">
+                            <h2>Profile</h2>
+                            <span class="txt">Profile details for your users.</span>
+                        </div>
+
+                    </div>
+                    <!-- Start .row -->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <!-- col-lg-4 start here -->
+                            <div class="panel panel-default plain">
+                                <!-- Start .panel -->
+                                <div class="panel-heading">
+                                    <h4 class="panel-title bb">Profile details</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row profile">
+                                        <!-- Start .row -->
+                                        <div class="col-md-4">
+                                            <div class="user-info clearfix ">
+                                                <output id="list"></output>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="profile-name">
+                                                <h3>Megan Fox</h3>
+                                                <p class="job-title mb0"><i class="fa fa-building"></i> SEO in Neocom Solutions</p>
+                                                <br>
+
+                                                <input type="file" id="files" />
+                                                <output id="list"></output>
+                                                <br>
+                                                <script>
+                                                    if (window.FileReader) {
+                                                        function handleFileSelect(evt) {
+                                                            var files = evt.target.files;
+                                                            var f = files[0];
+                                                            var reader = new FileReader();
+
+                                                            reader.onload = (function(theFile) {
+                                                                return function(e) {
+                                                                    document.getElementById('list').innerHTML = ['<img src="', e.target.result, '" title="', theFile.name, '" width="140 "/>'].join('');
+                                                                };
+                                                            })(f);
+
+                                                            reader.readAsDataURL(f);
+                                                        }
+                                                    }
+                                                    else {
+                                                        alert('This browser does not support FileReader');
+                                                    }
+                                                    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+                                                </script>
+
+                                                <a href="tel:664236522">Call (555)123-4567</a>
+                                                <button type="button" class="btn btn-danger mx-1" onclick="snapshot"><i class="fa fa-edit"></i> Take photo</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="contact-info bt">
+                                                <div class="row">
+                                                    <!-- Start .row -->
+                                                    <div class="col-md-4">
+                                                        <dl class="mt20">
+                                                            <dt class="text-muted">Phone</dt>
+                                                            <dd>(367)-045-347</dd>
+                                                            <dt class="text-muted">Mobile</dt>
+                                                            <dd>(368)-234-112</dd>
+                                                            <dt class="text-muted">Fax</dt>
+                                                            <dd>(362)-666-347</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <dl class="mt20">
+                                                            <dt class="text-muted">Email</dt>
+                                                            <dd>jonathansmith@gmail.com</dd>
+                                                            <dt class="text-muted">username</dt>
+                                                            <dd>meganfox</dd>
+
+
+                                                        </dl>
+                                                    </div>
+
+                                                </div>
+                                                <!-- End .row -->
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="profile-info bt">
+                                                <h5 class="text-muted">Profile info</h5>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores minus consequuntur corporis optio accusantium perspiciatis veritatis temporibus nostrum, saepe omnis aperiam illum odit, quos, cum eveniet
+                                                    possimus illo. Saepe sunt porro culpa repellat dolorem aperiam, quae nihil, maxime ducimus officiis voluptate. Libero obcaecati laboriosam reprehenderit adipisci harum ad, veniam explicabo.</p>
+                                            </div>
+                                            <div class="profile-tags">
+                                                <h5 class="text-muted">Tags</h5>
+                                                <form role="form" class="form-horizontal mb15">
+                                                    <input type="text" value="CEO, Worker" data-role="tagsinput">
+                                                </form>
+                                            </div>
+                                            <div class="social bt">
+                                                <h5 class="text-muted">Social</h5>
+                                                <dl class="dl-horizontal mb0">
+                                                    <dt>
+                                                            <span class="text-muted">
+                                            <i class="fa fa-facebook-square"></i>
+                                            Facebook:
+                                        </span>
+                                                        </dt>
+                                                    <dd><a href="#">facebook.com/1231</a>
+                                                    </dd>
+                                                    <dt>
+                                                            <span class="text-muted">
+                                            <i class="fa fa-twitter"></i>
+                                            Twitter:
+                                        </span>
+                                                        </dt>
+                                                    <dd><a href="#">twitter.com/profile/3234.html</a>
+                                                    </dd>
+                                                    <dt>
+                                                            <span class="text-muted">
+                                            <i class="fa fa-google-plus"></i>
+                                            Google+:
+                                        </span>
+                                                        </dt>
+                                                    <dd><a href="#">plus.google.com/jonathansmith</a>
+                                                    </dd>
+                                                    <dt>
+                                                            <span class="text-muted">
+                                            <i class="fa fa-linkedin"></i>
+                                            LinkedIn:
+                                        </span>
+                                                        </dt>
+                                                    <dd><a href="#">linkd.in/123123</a>
+                                                    </dd>
+                                                    <dt>
+                                                            <span class="text-muted">
+                                            <i class="fa fa-pinterest"></i>
+                                            Pinterest:
+                                        </span>
+                                                        </dt>
+                                                    <dd><a href="#">pinterst.com/profile/3234.html</a>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End .row -->
+                                </div>
+                            </div>
+                            <!-- End .panel -->
+
+                        </div>
+                        <!-- col-lg-4 end here -->
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+
+                            <!-- col-lg-4 start here -->
+                            <div class="panel panel-default plain">
+                                <!-- Start .panel -->
+                                <div class="panel-heading">
+                                    <h4 class="panel-title bb">Edit fields</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div>
+                                        <form name="modifyContactForm">
+                                            <div class="input-group input-group-sm mb-1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-name">Name</span>
+                                                </div>
+                                                <input name="name" required type="text" class="form-control" aria-label="Name" aria-describedby="inputGroup-name" ng-model="researcher.name">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-mail">Mail</span>
+                                                </div>
+                                                <input ng-class="{'is-invalid': !modifyResearcherForm.mail.$valid}" name="mail" required type="text" class="form-control" aria-label="Mail" aria-describedby="inputGroup-mail" ng-model="researcher.mail">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-researchGroupName">Research group name</span>
+                                                </div>
+                                                <input ng-class="{'is-invalid': !modifyResearcherForm.researchGroupName.$valid}" name="researchGroupName" required type="text" class="form-control" aria-label="Research group name" aria-describedby="inputGroup-researchGroupName" ng-model="researcher.researchGroup.name">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-researchGroupWebsite">Research group website</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Research group website" aria-describedby="inputGroup-researchGroupWebsite" ng-model="researcher.researchGroup.website">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-phone">Phone</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Phone" aria-describedby="inputGroup-phone" ng-model="researcher.phone">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-website">Website</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Website" aria-describedby="inputGroup-website" ng-model="researcher.website">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-orcid">ORCID</span>
+                                                </div>
+                                                <input type="text" disabled class="form-control" aria-label="ORCID" aria-describedby="inputGroup-orcid" ng-model="researcher.ORCID">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-researcherID">ResearcherID</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="ResearcherID" aria-describedby="inputGroup-researcherID" ng-model="researcher.researcherID">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-department">Department</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="Department" aria-describedby="inputGroup-department" ng-model="researcher.department">
+                                            </div>
+                                            <div class="input-group input-group-sm mb-1">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroup-university">University</span>
+                                                </div>
+                                                <input type="text" class="form-control" aria-label="University" aria-describedby="inputGroup-university" ng-model="researcher.university">
+                                            </div>
+                                            <div class="row align-self-end justify-content-center mt-3">
+                                                <button type="button" class="btn btn-danger mx-1" ng-click="toggleEditFields()"><i class="fa fa-times"></i> Cancel</button>
+                                                <button ng-disabled="!modifyResearcherForm.name.$valid || !modifyResearcherForm.mail.$valid || !modifyResearcherForm.researchGroupName.$valid" type="button" class="btn btn-info mx-1" ng-click="modifyResearcher(researcher.ORCID); hideEditFields();"> <i class ="fa fa-sync-alt"></i> Update</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- End .tabs -->
+    </div>
+    <!-- col-lg-4 end here -->
+
+    </div>
+    <!-- End .row -->
+    </div>
+    </div>
+    <!-- End .panel -->
+    </div>
+    <!-- col-lg-4 end here -->
+    </div>
+    <!-- End .row -->
+    </div>
+    <!-- End .page-content-inner -->
+    </div>
+    <!-- / page-content-wrapper -->
+    </div>
+    <!-- / page-content -->
+    </div>
+    <!-- / #wrapper -->
+    <div id="footer" class="clearfix sidebar-page right-sidebar-page">
+        <!-- Start #footer  -->
+        <p class="pull-left">
+            Copyrights &copy; 2014 <a href="http://suggeelson.com/" class="color-blue strong" target="_blank">SuggeElson</a>. All rights reserved.
+        </p>
+        <p class="pull-right">
+            <a href="#" class="mr5">Terms of use</a> |
+            <a href="#" class="ml5 mr25">Privacy police</a>
+        </p>
+    </div>
+    <!-- End #footer  -->
+    <!-- Back to top -->
+    <div id="back-to-top"><a href="#">Back to Top</a>
+    </div>
+
+    <script type="text/javascript">
+        << <!--Load pace first-- >
+        <
+        script src = "../plugins/core/pace/pace.min.js" >
+    </script>
+    <!-- Important javascript libs(put in all pages) -->
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/libs/jquery-2.1.1.min.js">
+    </script>')
+    </script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/libs/jquery-ui-1.10.4.min.js">
+    </script>')
+    </script>
+
+    <!-- Bootstrap plugins -->
+    <script src="../js/bootstrap/bootstrap.js"></script>
+    <!-- Core plugins ( not remove ) -->
+    <script src="../js/libs/modernizr.custom.js"></script>
+    <!-- Handle responsive view functions -->
+    <script src="../js/jRespond.min.js"></script>
+    <!-- Custom scroll for sidebars,tables and etc. -->
+    <script src="../plugins/core/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Important javascript libs(put in all pages) -->
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="../js/libs/jquery-2.1.1.min.js">
+    </script>')
+    </script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="../js/libs/jquery-ui-1.10.4.min.js">
+    </script>')
+    </script>
+    <!-- Bootstrap plugins -->
+    <script src="../js/bootstrap/bootstrap.js"></script>
+    <!-- Core plugins ( not remove ) -->
+    <script src="../js/libs/modernizr.custom.js"></script>
+    <!-- Handle responsive view functions -->
+    <script src="../js/jRespond.min.js"></script>
+    <!-- Custom scroll for sidebars,tables and etc. -->
+    <script src="../plugins/core/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../js/jquery.dynamic.js"></script>
+    <script src="../js/main.js">
+    </script>
+    <script src="../js/pages/profile.js"></script>
+    var video = document.querySelector("#vid"); var canvas = document.querySelector('#canvas'); var ctx = canvas.getContext('2d'); var localMediaStream = null; var onCameraFail = function(e) { console.log('Camera did not work.', e); }; function reset() {
+    video.style.display = "inline"; canvas.style.display = "none"; } function snapshot() { if (localMediaStream) { ctx.drawImage(video, 0, 0); video.style.display = "none"; canvas.style.display = "inline"; } } function download() { var strDataURI = canvas.toDataURL("image/png;base64");
+    document.write('
+    <img src="' + strDataURI + '" />'); } function applyEffect(method) { // Get the CanvasPixelArray from the given coordinates. imgData = ctx.getImageData(0, 0, canvas.width, canvas.height); pix = imgData.data; // Loop over each pixel and change the
+    color. for (var i = 0, n = pix.length; i
+    < n; i +=4 ) { var lum; if (method==1 ) { lum=0 .21 * pix[i] + 0.71 * pix[i + 1] + 0.07 * pix[i + 2] } else if (method==2 ) { lum=( Math.max(pix[i], pix[i + 1], pix[i + 2]) + Math.min(pix[i], pix[i + 1], pix[i + 2])) / 2 } else if (method==3 ) { lum=p
+        ix[i] + pix[i + 1] + pix[i + 2] / 3 } pix[i]=l um; pix[i + 1]=l um; pix[i + 2]=l um; //pix[i ]=m ultiply(multiplyColor[0], pix[i ]); // red //pix[i+1]=m ultiply(multiplyColor[1], pix[i+1]); // green //pix[i+2]=m ultiply(multiplyColor[2], pix[i+2]);
+    // blue // pix[i+3] is alpha channel (ignored) } // Draw the result on the canvas ctx.putImageData(imgData, 0, 0); } function geo() { if (navigator.geolocation) { navigator.geolocation.getCurrentPosition(success); } else { error( 'not supported');
+        } } function success(position) { window.alert( "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude); } navigator.getUserMedia=n avigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia ||
+        navigator.msGetUserMedia; window.URL=w indow.URL || window.webkitURL; navigator.getUserMedia({ video: true }, function(stream) { video.src=w indow.URL.createObjectURL(stream); localMediaStream=s tream; }, onCameraFail); <script>
+        <script type="text/javascript">
+            var video = document.querySelector("#vid");
+            var canvas = document.querySelector('#canvas');
+            var ctx = canvas.getContext('2d');
+            var localMediaStream = null;
+
+            var onCameraFail = function(e) {
+                console.log('Camera did not work.', e);
+            };
+
+            function reset() {
+                video.style.display = "inline";
+                canvas.style.display = "none";
+            }
+
+            function snapshot() {
+                if (localMediaStream) {
+                    ctx.drawImage(video, 0, 0);
+                    video.style.display = "none";
+                    canvas.style.display = "inline";
+                }
+            }
+
+            function download() {
+                var strDataURI = canvas.toDataURL("image/png;base64");
+                document.write('<img src="' + strDataURI + '"/>');
+            }
+
+            function applyEffect(method) {
+                // Get the CanvasPixelArray from the given coordinates.
+                imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                pix = imgData.data;
+                // Loop over each pixel and change the color.
+                for (var i = 0, n = pix.length; i < n; i += 4) {
+                    var lum;
+                    if (method == 1) {
+                        lum = 0.21 * pix[i] + 0.71 * pix[i + 1] + 0.07 * pix[i + 2]
+                    }
+                    else if (method == 2) {
+                        lum = (Math.max(pix[i], pix[i + 1], pix[i + 2]) + Math.min(pix[i], pix[i + 1], pix[i + 2])) / 2
+                    }
+                    else if (method == 3) {
+                        lum = pix[i] + pix[i + 1] + pix[i + 2] / 3
+                    }
+                    pix[i] = lum;
+                    pix[i + 1] = lum;
+                    pix[i + 2] = lum;
+                    //pix[i  ] = multiply(multiplyColor[0], pix[i  ]); // red
+                    //pix[i+1] = multiply(multiplyColor[1], pix[i+1]); // green
+                    //pix[i+2] = multiply(multiplyColor[2], pix[i+2]); // blue
+                    // pix[i+3] is alpha channel (ignored)
+                }
+                // Draw the result on the canvas
+                ctx.putImageData(imgData, 0, 0);
+            }
+
+            function geo() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(success);
+                }
+                else {
+                    error('not supported');
+                }
+            }
+
+            function success(position) {
+                window.alert("Latitude: " + position.coords.latitude +
+                    " Longitude: " + position.coords.longitude);
+            }
+
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+            window.URL = window.URL || window.webkitURL;
+            navigator.getUserMedia({ video: true }, function(stream) {
+                video.src = window.URL.createObjectURL(stream);
+                localMediaStream = stream;
+            }, onCameraFail);
+
+            function handleFileSelect(evt) {
+                var files = evt.target.files;
+                var f = files[0];
+                var reader = new FileReader();
+
+                reader.onload = (function(theFile) {
+                    return function(e) {
+                        document.getElementById('list').innerHTML = ['<img src="', e.target.result, '" title="', theFile.name, '" width="50" />'].join('');
+                    };
+                })(f);
+
+                reader.readAsDataURL(f);
+            }
+        </script>
+
+</body>
+
+
+</html>
