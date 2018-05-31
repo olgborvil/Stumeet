@@ -85,7 +85,7 @@
         <h1>Bienvenido a Stumeet</h1>
         <h4>Antes de nada, introduce tus datos para poder registrarte en nuestra base de datos</h4>
         <h5>Si ya has introducido tus datos, haz click aquí</h5>
-          <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userKnownModal" >Buscar</button>
+          <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userKnownModal" >Busca usando tu username</button>
             <!-- .page-content-wrapper -->
         
         
@@ -194,94 +194,99 @@
  
   <!-------------------------------------------------------UserUnknownModal !------------------------------------------------------------>                
 <div class="container">
-  
   <!-- Trigger the modal with a button -->
     <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#UserUnknownModal" ng-disabled="!newContact.name||!newContact.username||!newContact.mail||!newContact.phone||!newContact.sex||!newContact.loving
   " ng-click="addContact()">Buscar</button>
-
   <!-- Modal -->
   <div class="modal fade" id="UserUnknownModal" role="dialog">
-    <div class="modal-dialog">
-    
+      <div class="modal-dialog">
       <!-- Modal content-->
-     <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Find people</h4>
-        </div>
+        <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Encuentra personas</h4>
+            </div>
         <div class="modal-body">
-              <div class="page-header ">
+            <div class="page-header ">
                 <h2>Estas son las personas que pueden interesarte...</h2>
-                </div>
-
-         </div>
-                    <p class="text-center container mt-4 " ng-show="!contacts ">
-                        <div class="card " ng-repeat="contact in contacts" ng-if="contact.loving !=newContact.loving" ng-cloak>
-                            <div class="panel-body ">
-                                <div class="row profile ">
-                                    <div class="col-md-6 ">
-                                        <h4 ng-show="contacts "><b>{{contacts[$index].name}}</b></h4>
-                                        <img ng-show="contacts " src={{contacts[$index].photo}} alt="Avatar " height="366 " width="288 ">
-                                        <p></p>
-                                    </div>
-                                    
-                                    <div class="col-md-6 ">
-                                        <br>
-                                        <br>
-                                       <!-- <h5 ng-show="contacts "> <b>Nombre de usuario:</b> {{contacts[$index].username}}</h5> -->
-                                        <h5 ng-show="contacts "> <b>Edad:</b> {{contacts[$index].age}}</h5>
-                                        <h5 ng-show="contacts "> <b>Profesión:</b> {{contacts[$index].job}}</h5>
-                                        <h5 ng-show="contacts "> <b>Descripción:</b> {{contacts[$index].description}}</h5>
-                                        <h5 ng-show="contacts "> <b>Intereses:</b> {{contacts[$index].hobby[$index]}}</h5>
-                                            
-                                        <br>
-                                        <br>
-                                        <br>
-                                        <a class="btn btn-success btn-lg " target="_blank " ng-href="{{copyContacts[$index].location}} " ng-mousedown="openTab() "><i class="fa fa-globe "> </i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a class="btn btn-info btn-lg" href="tel:{{contacts[$index].phone}}"><i class="fa fa-phone "></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a class="btn btn-danger btn-lg" href="mailto:{{contacts[$index].email}}"><i class="fa fa fa-envelope "></i></a>
-                                    </div>
-                                </div>
-                            </div>
+            </div>
+        </div>
+        <p class="text-center container mt-4 " >
+            <div class="card " ng-repeat="contact in contacts" ng-if="contact.loving !=newContact.loving" ng-cloak>
+                <div class="panel-body ">
+                    <div class="row profile ">
+                        <div class="col-md-6 ">
+                            <h4 ng-show="contacts "><b>{{contacts[$index].name}}</b></h4>
+                            <img ng-show="contacts " src={{contacts[$index].photo}} alt="Avatar " height="366 " width="288 ">
+                            <p></p>
                         </div>
-                    </p>
+                        <div class="col-md-6 "><br><br>
+                            <!-- <h5 ng-show="contacts "> <b>Nombre de usuario:</b> {{contacts[$index].username}}</h5> -->
+                            <h5 ng-show="contacts "> <b>Edad:</b> {{contacts[$index].age}}</h5>
+                            <h5 ng-show="contacts "> <b>Profesión:</b> {{contacts[$index].job}}</h5>
+                            <h5 ng-show="contacts "> <b>Descripción:</b> {{contacts[$index].description}}</h5>
+                            <!--<h5 ng-show="contacts "> <b>Intereses:</b> {{contacts[$index].hobby[$index]}}</h5>-->
+                            <br><br><br>
+                            <a class="btn btn-success btn-lg " target="_blank " ng-href="{{copyContacts[$index].location}} " ng-mousedown="openTab() "><i class="fa fa-globe "> </i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-info btn-lg" href="tel:{{contacts[$index].phone}}"><i class="fa fa-phone "></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-danger btn-lg" href="mailto:{{contacts[$index].email}}"><i class="fa fa fa-envelope "></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-       
-        </div>
+        </p>
     </div>
-       
-      </div>
-                 </div>
-            
-  </div>
-  
-  
-
- <!------------------------------------------------------- UserKnownModal ----------------------------------------------------------->
-<div id="userKnownModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Utiliza tu nombre de usuario para buscar personas</h4>
-      </div>
-      <div class="modal-body">
-        <p>Introduce tu nombre de usuario.</p>
-        <input type=text ng-model ="knownUser.username">
-        <button ng-disabled="!knownUser.username" Encuentra personas</button>
-            
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-
   </div>
 </div>
-                 
-          <script>
+ <!------------------------------------------------------- UserKnownModal ----------------------------------------------------------->
+<div class="container">
+    <div id="userKnownModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+    <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Utiliza tu nombre de usuario para buscar personas</h4>
+            </div>
+        <div class="modal-body">
+            
+            <div ng-show = "!userKnown.username">
+            <p>Introduce tu nombre de usuario:</p>
+            <input type=text name="username" ng-model ="currentUsername">
+            <button  ng-click="getContact();currentUsername='';getContacts();">Entra</button>
+            </div>
+            <div ng-show="contacts[$index].username=userKnown.username">
+                  <h1 > Hola  {{userKnown.name}}</h1>
+                <div ng-repeat="contact in contacts" ng-if="contact.loving !=userKnown.loving" ng-cloak >
+                   
+                       <div class="row profile ">
+                            <div class="col-md-6 ">
+                                <h4 ng-show="contacts "><b>{{contacts[$index].name}}</b></h4>
+                                <img ng-show="contacts " src={{contacts[$index].photo}} alt="Avatar " height="366 " width="288 ">
+                                <p></p>
+                            </div>
+                            <div class="col-md-6 "><br><br>
+                                <!-- <h5 ng-show="contacts "> <b>Nombre de usuario:</b> {{contacts[$index].username}}</h5> -->
+                                <h5 ng-show="contacts "> <b>Edad:</b> {{contacts[$index].age}}</h5>
+                                <h5 ng-show="contacts "> <b>Profesión:</b> {{contacts[$index].job}}</h5>
+                                <h5 ng-show="contacts "> <b>Descripción:</b> {{contacts[$index].description}}</h5>
+                                <!--<h5 ng-show="contacts "> <b>Intereses:</b> {{contacts[$index].hobby[$index]}}</h5>-->
+                                <br><br><br>
+                                <a class="btn btn-success btn-lg " target="_blank " ng-href="{{copyContacts[$index].location}} " ng-mousedown="openTab() "><i class="fa fa-globe "> </i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a class="btn btn-info btn-lg" href="tel:{{contacts[$index].phone}}"><i class="fa fa-phone "></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a class="btn btn-danger btn-lg" href="mailto:{{contacts[$index].email}}"><i class="fa fa fa-envelope "></i></a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+     </div>
+    </div>
+</div>
+<!-----------------------------------------------Some Scritps -------------------------------------------------------------------->        
+<script>
             if (window.FileReader) {
                 function handleFileSelect(evt) {
                     var files = evt.target.files;

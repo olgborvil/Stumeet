@@ -1,41 +1,11 @@
 {"name":"Alejandro Fernández","phone":"951235644","mail":"afernandez@us.es","hobbies":["Jugar al fútbol  ","natación"],"job":"Ingeniero informático","description":"Persona alegre y divertida que le gusta probar nuevas experiencias","age":"30","photo":"static/img/foto-prof.jpg","sex":"male","username":"afernandez","_id":"BuEcEQweOGN2dXiN"}
-{"name":"Olga","username":"Olgborvil","mail":"olgaborrego95@gmail.com","age":"22","job":"Ingeniera","phone":"125634789","sex":"female","_id":"M7n1UDRSMmXtIjmJ"}
-{"name":"Jorge","username":"Jimenez","mail":"jorge@us.es","age":"23","job":"Matemático","hobbies":"Salir con mis amigos","description":"Chico extrovertido con ganas de divertirse","phone":"663124789","sex":"female","_id":"OPJkZfzmvAknCzx2"}
-{"name":"Jorge","username":"Jimenez","mail":"jorge@us.es","age":"23","job":"Matemático","hobbies":"Salir con mis amigos","description":"Chico extrovertido con ganas de divertirse","phone":"663124789","sex":"male","_id":"PvBzjEXCiKICSJcm"}
-{"name":"Antonio Martín","phone":"664236544","mail":"amartin@uss.es","hobbies":["Jugar al fútbol  ","natación"],"job":"Ingeniero informático","description":"Persona alegre y divertida que le gusta probar nuevas experiencias","age":"30","photo":"static/img/foto-martin.jpg","location":"https://www.google.es/maps/place/Peluquer%C3%ADa+Reina+Mercedes/@37.360545,-5.9882057,17z/data=!3m1!4b1!4m5!3m4!1s0xd126c2b211306c9:0xb91586f496c44812!8m2!3d37.360545!4d-5.986017","sex":"male","username":"amartin","_id":"i4heW1PrgnZI2wmq"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"olgborvil","age":"22","sex":"female","_id":"cLkmN4kKbAqMs2pU"}
-{"name":"Manuel Garcia","mail":"mgarcia@gmail.com","phone":"376458799","username":"mgarcia","age":"25","sex":"male","_id":"4mxbG0YNMMSNI07X"}
-{"$$deleted":true,"_id":"4mxbG0YNMMSNI07X"}
-{"$$deleted":true,"_id":"OPJkZfzmvAknCzx2"}
-{"$$deleted":true,"_id":"PvBzjEXCiKICSJcm"}
-{"$$deleted":true,"_id":"cLkmN4kKbAqMs2pU"}
-{"$$deleted":true,"_id":"M7n1UDRSMmXtIjmJ"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"olgborvil","age":"24","job":"Matemática","hobby":{"leer":true},"sex":"female","loving":"male","_id":"aewPC3xFBd1Gwhg4"}
-{"$$deleted":true,"_id":"aewPC3xFBd1Gwhg4"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"olgborvil","age":"24","job":"Matemática","hobby":{"leer":true},"sex":"female","loving":"male","_id":"LhhvaqDzw3cBPxYg"}
-{"$$deleted":true,"_id":"LhhvaqDzw3cBPxYg"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"olgborvil","hobby":{"leer":true},"sex":"female","loving":"male","_id":"xjeGGn3WtqQysNYu"}
 {"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"ol","hobby":{"leer":true},"sex":"female","loving":"male","_id":"ZpUXNFfACEF34luF"}
-{"$$deleted":true,"_id":"xjeGGn3WtqQysNYu"}
-{"name":"Andres","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","hobby":{"leer":false,"deporte":true},"sex":"male","loving":"female","age":"21","_id":"eCMAVRCMQfqmpgZJ"}
-{"$$deleted":true,"_id":"eCMAVRCMQfqmpgZJ"}
-{"name":"Andres","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","hobby":{"leer":true},"sex":"male","loving":"female","_id":"Jep5FinJUtFMdSzI"}
-{"$$deleted":true,"_id":"Jep5FinJUtFMdSzI"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","sex":"male","loving":"female","_id":"cDmC2SIjNfNqe1Dv"}
-{"$$deleted":true,"_id":"cDmC2SIjNfNqe1Dv"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","sex":"male","loving":"female","_id":"TSblacj12seqDtnU"}
-{"$$deleted":true,"_id":"TSblacj12seqDtnU"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","sex":"male","loving":"female","_id":"PDH6F4yWG4r7oYBr"}
-{"$$deleted":true,"_id":"PDH6F4yWG4r7oYBr"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","sex":"male","loving":"female","_id":"kFFWFWRON1JRLVp1"}
-{"$$deleted":true,"_id":"kFFWFWRON1JRLVp1"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","sex":"male","_id":"4F6jJ9zJDAfVglqb"}
-{"$$deleted":true,"_id":"4F6jJ9zJDAfVglqb"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","sex":"male","_id":"DaOlB9kF4sXQZELC"}
-{"$$deleted":true,"_id":"DaOlB9kF4sXQZELC"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","sex":"male","_id":"L4DYoYpsI9QMe4FE"}
-{"$$deleted":true,"_id":"L4DYoYpsI9QMe4FE"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","sex":"male","_id":"SS3PzfMFod3IvzjV"}
-{"$$deleted":true,"_id":"SS3PzfMFod3IvzjV"}
-{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"andres","sex":"male","_id":"51cmDV6vCEKe6jfX"}
-{"$$deleted":true,"_id":"51cmDV6vCEKe6jfX"}
+{"name":"Antonio Martín","phone":"664236544","mail":"amartin@uss.es","hobbies":["Jugar al fútbol  ","natación"],"job":"Ingeniero informático","description":"Persona alegre y divertida que le gusta probar nuevas experiencias","age":"30","photo":"static/img/foto-martin.jpg","location":"https://www.google.es/maps/place/Peluquer%C3%ADa+Reina+Mercedes/@37.360545,-5.9882057,17z/data=!3m1!4b1!4m5!3m4!1s0xd126c2b211306c9:0xb91586f496c44812!8m2!3d37.360545!4d-5.986017","sex":"male","username":"amartin","_id":"i4heW1PrgnZI2wmq"}
+{"name":"Olga Borrego Villa","mail":"olgaborrego95@gmail.com","phone":"664236544","username":"test","sex":"female","loving":"male","_id":"JGAKg5TdrvVEnnAp"}
+{"$$deleted":true,"_id":"JGAKg5TdrvVEnnAp"}
+{"name":"Antonio Martín","phone":"664236544","mail":"amartin@uss.es","username":"amartin","hobbies":["Jugar al fútbol  ","natación"],"job":"Ingeniero informático","description":"Persona alegre y divertida que le gusta probar nuevas experiencias","age":"30","photo":"static/img/foto-martin.jpg","location":"https://www.google.es/maps/place/Peluquer%C3%ADa+Reina+Mercedes/@37.360545,-5.9882057,17z/data=!3m1!4b1!4m5!3m4!1s0xd126c2b211306c9:0xb91586f496c44812!8m2!3d37.360545!4d-5.986017","_id":"gORLVwzRWu82Azny"}
+{"name":"Antonio Martín","phone":"664236544","mail":"amartin@uss.es","hobbies":["Jugar al fútbol  ","natación"],"job":"Ingeniero informático","description":"Persona alegre y divertida que le gusta probar nuevas experiencias","age":"30","photo":"static/img/foto-martin.jpg","location":"https://www.google.es/maps/place/Peluquer%C3%ADa+Reina+Mercedes/@37.360545,-5.9882057,17z/data=!3m1!4b1!4m5!3m4!1s0xd126c2b211306c9:0xb91586f496c44812!8m2!3d37.360545!4d-5.986017","loving":"female","username":"amartin","_id":"gORLVwzRWu82Azny"}
+{"name":"Alejandro Fernández","phone":"951235644","mail":"afernandez@us.es","hobbies":["Jugar al fútbol  ","natación"],"job":"Ingeniero informático","description":"Persona alegre y divertida que le gusta probar nuevas experiencias","age":"30","photo":"static/img/foto-prof.jpg","sex":"male","loving":"female","username":"afernandez","_id":"BuEcEQweOGN2dXiN"}
+{"$$deleted":true,"_id":"gORLVwzRWu82Azny"}
+{"$$deleted":true,"_id":"i4heW1PrgnZI2wmq"}
+{"name":"Antonio Martín","phone":"664236544","mail":"amartin@uss.es","hobbies":["Jugar al fútbol  ","natación"],"job":"Ingeniero informático","description":"Persona alegre y divertida que le gusta probar nuevas experiencias","age":"30","photo":"static/img/foto-martin.jpg","location":"https://www.google.es/maps/place/Peluquer%C3%ADa+Reina+Mercedes/@37.360545,-5.9882057,17z/data=!3m1!4b1!4m5!3m4!1s0xd126c2b211306c9:0xb91586f496c44812!8m2!3d37.360545!4d-5.986017","loving":"female","username":"amartin","_id":"abov4fuEF9XdLaIi"}

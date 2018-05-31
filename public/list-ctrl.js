@@ -46,8 +46,9 @@ angular
 			$http.get("api/v1/contacts/"+$scope.currentUsername)
 				.then(function (response) {
 					$scope.contacts = [];
-					$scope.contacts[0] = response.data;
-					$scope.copyContacts = angular.copy($scope.contacts);
+					$scope.userKnown=response.data;
+				//	$scope.contacts[0] = response.data;
+				//	$scope.copyContacts = angular.copy($scope.contacts);
 				})
 				.catch(function (error) {
 					console.log(error);
