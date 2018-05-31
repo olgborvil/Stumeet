@@ -12,8 +12,8 @@
         <link href="css/custom.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-          <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <script src="https://apis.google.com/js/platform.js" async defer></script>
          <script>
         window.jQuery || document.write('<script src="../js/libs/jquery-2.1.1.min.js">\x3C/script>')
         </script>
@@ -30,36 +30,24 @@
 </head>
 
 <body>
-
-      <div id="header" class="page-navbar">
-    
-            <div id="navbar-no-collapse" class="navbar-no-collapse">
+ <!----------------------------------------------------------Logo navbar----------------------------------------------------------> 
+    <div id="header" class="page-navbar">
+        <div id="navbar-no-collapse" class="navbar-no-collapse">
                 <!-- top left nav -->
                 <ul class="nav navbar-nav">
                     <li class="toggle-sidebar">
                         <a href="#">
                             <i></i> <img src="static/img/logoSmall3.png"></img>
                             <span class="sr-only">Collapse sidebar</span>
-                          
                         </a>
-                       
                        </li> 
-                       <li>
-                        <a href="#" class="reset-layout tipB" title="Reset panel position for this page"><i> 
-                       
-                        
-                   
-                    </li>
-                   
+                    <li><a href="#" class="reset-layout tipB" title="Reset panel position for this page"><i></li>
                 </ul>
-                 <ul class="nav navbar-nav navbar-right  hidden-lg  ">
-                     
-                     
-                      
-            </div>
-            <!-- / collapse -->
         </div>
-    <!-- #wrapper -->
+            <!-- / collapse -->
+    </div>
+
+<!-----------------------------------------------------------Sidebar-------------------------------------------------------------------->
     <div id="wrapper">
         <!-- .page-sidebar -->
         <aside id="sidebar" class="page-sidebar hidden-md hidden-sm hidden-xs ">
@@ -91,77 +79,143 @@
         </aside>
         <!-- / page-sidebar -->
         
-        <!--View all the contacts -->
-        <div class="page-content sidebar-page right-sidebar-page clearfix "  ng-controller="ListCtrl">
-            <h1>Bienvenido a Stumeet</h1>
-            <h4>Antes de nada, introduce tus datos para poder registrarte en nuestra base de datos</h4>
-            <h5>Si ya has introducido tus datos, haz click aquí</h5>
-              <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userKnownModal" >Buscar</button>
-          
+<!---------------------------------------------------Form for login--------------------------------------------------------->
+    <div class="page-content sidebar-page "  ng-controller="ListCtrl">
+        
+        <h1>Bienvenido a Stumeet</h1>
+        <h4>Antes de nada, introduce tus datos para poder registrarte en nuestra base de datos</h4>
+        <h5>Si ya has introducido tus datos, haz click aquí</h5>
+          <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userKnownModal" >Buscar</button>
             <!-- .page-content-wrapper -->
-            <div class="page-content-wrapper ">
-                <div class="page-content-inner ">
-                    <!-- Start .page-content-inner -->
-                    <div id="page-header " class="clearfix ">
-                <form name="contactForm">
-                <span> Nombre </span>
-                <input class="form-control" ng-model="newContact.name" > 
-                <span>Nombre de usuario</span>
-                <input  name="Username" class="form-control" ng-model="newContact.username" type="text">
-                 <span>E-mail</span>
-                <input  name="E-mail" class="form-control" ng-model="newContact.mail" type="email">
-                  <span>Edad</span>
-                <input  name="Age" class="form-control" ng-model="newContact.age" type="text">
-                <span>Profesión</span>
-                <input  name="Job" class="form-control" ng-model="newContact.job" type="text">
-                <span>Aficiones</span>
-                 <input  name="Hobbies" class="form-control" ng-model="newContact.hobbies" type="text">
-                     <span>Descripción</span>
-                 <textarea name="Description" class="form-control" ng-model="newContact.description" ></textarea>
-                     <span>Teléfono</span>
-                 <input  name="Phone" class="form-control" ng-model="newContact.phone" type="tel">
-              
-                 <span>Sexo</span> <br>
-            
-                 <input name="Male" ng-model="newContact.sex" type="radio" value="male">  Hombre<br>
-                 <input name="Female" ng-model="newContact.sex" type="radio" value="female"> Mujer<br>
-                  <output id="foto"></output>
-                 <span>Foto del perfil </span> <br> 
-                <input type='file' id="photo"  class="form-control" ng-model="newContact.photo">
-               
+        
+        
+    <div class="page-content-inner">
+   <!-----------------------------------Large devices--------------------------------------------------------------------------->   
+         <div class="visible-lg">
                      
+                    <!-- Start .page-content-inner -->
+             <form name="contactForm">
+                <div class="col-md-6 ">
+                    <span> Nombre*</span>
+                        <input class="form-control" ng-model="newContact.name" required > 
+                     <span>E-mail</span>
+                        <input  name="E-mail" class="form-control" ng-model="newContact.mail" type="email">
+                    <span>Profesión</span>
+                        <input  name="Job" class="form-control" ng-model="newContact.job" type="text"> 
+                        <!--
+                    <span>Intereses</span> <br>
+                    <div class="col-md-6"> <br>
+                        <input type="checkbox" ng-model="newContact.hobby[1]" ng-true-value="'Leer'" name="hobby1" value="Leer"> Leer<br>
+                        <input type="checkbox" ng-model="newContact.hobby.deporte" name="hobby2" value="Deporte"> Deporte<br>
+                        <input type="checkbox" name="hobby3" value="Cine" > Cine <br>
+                        <input type="checkbox" name="hobby4" value="Cocinar"> Cocinar<br>
+                    </div>
+                    <div class="col-sm-6"> <br>
+                        <input type="checkbox" name="hobby5" value="Moda"> Moda<br>
+                        <input type="checkbox" name="hobby6" value="Viajar" >Viajar<br>
+                        <input type="checkbox" name="hobby7" value="Animales" >Animales<br>
+                        <input type="checkbox" name="hobby8" value="Musica" >Música<br>
+                    </div>
+                    -->
+                     <div class="col-md-6"> <br>
+                   <span>Sexo*</span> <br>
+                         <input name="Male" ng-model="newContact.sex" type="radio" value="male">  Masculino<br>
+                         <input name="Female" ng-model="newContact.sex" type="radio" value="female"> Femenino<br>
+                    </div>
+                       <div class="col-md-6"> <br>
+                      <span>Te interesan...*</span> <br>
+                        <input name="LovingMale" ng-model="newContact.loving" type="radio" value="male">  Chicos<br>
+                        <input name="LovingFemale" ng-model="newContact.loving" type="radio" value="female"> Chicas<br>
+                    </div>
+                </div>
+                  
+                   <div class="col-sm-6">
+                    <span>Nombre de usuario*</span>
+                        <input  name="Username" class="form-control" ng-model="newContact.username" type="text">
+                     <span>Edad</span>
+                        <input  name="Age" class="form-control" ng-model="newContact.age" type="text">
+                    <span>Teléfono</span>
+                        <input  name="Phone" class="form-control" ng-model="newContact.phone" type="tel">
+                    <span>Descripción</span>
+                        <textarea name="Description" class="form-control" ng-model="newContact.description" ></textarea>
                    
-                
-        </form>
-          
-                
+                    <br><br>
+                   </div><br><br>
+                  <br><span>Foto de perfil </span> <br> 
+                        <input type='file' id="photo"  class="form-control" ng-model="newContact.photo">
+            </form>
+       
+         </div>
+  
+<!---------------------------------------------End Large Devices ------------------------------------------------------------------>
+<!---------------------------------------------Start Small Devices ---------------------------------------------------------------->
+<div class="visible-md visible-sm visible-xs">
+                       
+    <form name="contactForm">
+        <span> Nombre </span>
+            <input class="form-control" ng-model="newContact.name" > 
+        <span>Nombre de usuario</span>
+            <input  name="Username" class="form-control" ng-model="newContact.username" type="text">
+         <span>Edad</span>
+            <input  name="Age" class="form-control" ng-model="newContact.age" type="text">
+        <span>Teléfono</span>
+             <input  name="Phone" class="form-control" ng-model="newContact.phone" type="tel">
+        <span>E-mail</span>
+            <input  name="E-mail" class="form-control" ng-model="newContact.mail" type="email">
+        <span>Profesión</span>
+            <input  name="Job" class="form-control" ng-model="newContact.job" type="text"> 
+            
+        <span>Descripción</span>
+             <textarea name="Description" class="form-control" ng-model="newContact.description" ></textarea> <br>
+             <!--
+        <span>Intereses</span> <br>
+            <input type="checkbox" name="vehicle1" value="Bike"> Leer<br>
+            <input type="checkbox" name="vehicle2" value="Car"> Deporte<br>
+            <input type="checkbox" name="vehicle3" value="Boat" checked> Cine <br>
+            <input type="checkbox" name="vehicle1" value="Bike"> Cocinar<br>
+            <input type="checkbox" name="vehicle2" value="Car"> Moda<br>
+            <input type="checkbox" name="vehicle3" value="Boat" checked>Viajar<br>
+            <input type="checkbox" name="vehicle3" value="Boat" checked>Animales<br>
+            <input type="checkbox" name="vehicle3" value="Boat" checked>Música<br><br>
+            -->
+        <span>Sexo</span> <br>
+            <input name="Male" ng-model="newContact.sex" type="radio" value="male">  Hombre<br>
+            <input name="Female" ng-model="newContact.sex" type="radio" value="female"> Mujer<br><br>
+        <span>¿Qué buscas?</span> <br>
+            <input name="Male" ng-model="newContact.sex" type="radio" value="male">  Hombre<br>
+            <input name="Female" ng-model="newContact.sex" type="radio" value="female"> Mujer<br>
+        <br><span>Foto de perfil </span> <br> 
+            <input type='file' id="photo"  class="form-control" ng-model="newContact.photo">
+    </form>
+       
+</div>
+         
+    
+ 
+  <!-------------------------------------------------------UserUnknownModal !------------------------------------------------------------>                
 <div class="container">
   
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-disabled="!newContact.name || !newContact.username || !newContact.mail || !newContact.phone|| !newContact.sex
+    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#UserUnknownModal" ng-disabled="!newContact.name||!newContact.username||!newContact.mail||!newContact.phone||!newContact.sex||!newContact.loving
   " ng-click="addContact()">Buscar</button>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="UserUnknownModal" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
-      <div class="modal-content">
+     <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Find people</h4>
         </div>
         <div class="modal-body">
               <div class="page-header ">
-                            <h2>Here the details of people could be interested on you!</h2>
-                           
-                        </div>
+                <h2>Estas son las personas que pueden interesarte...</h2>
+                </div>
 
-                    </div>
-
-
-
+         </div>
                     <p class="text-center container mt-4 " ng-show="!contacts ">
-                        <div class="card " ng-repeat="contact in contacts" ng-if="contact.sex !=newContact.sex" ng-cloak>
+                        <div class="card " ng-repeat="contact in contacts" ng-if="contact.loving !=newContact.loving" ng-cloak>
                             <div class="panel-body ">
                                 <div class="row profile ">
                                     <div class="col-md-6 ">
@@ -169,18 +223,19 @@
                                         <img ng-show="contacts " src={{contacts[$index].photo}} alt="Avatar " height="366 " width="288 ">
                                         <p></p>
                                     </div>
+                                    
                                     <div class="col-md-6 ">
                                         <br>
                                         <br>
-                                        <h5 ng-show="contacts "> <b>Username:</b> {{contacts[$index].username}}</h5>
-                                        <h5 ng-show="contacts "> <b>Age:</b> {{contacts[$index].age}}</h5>
-                                        <h5 ng-show="contacts "> <b>Job:</b> {{contacts[$index].job}}</h5>
-                                        <h5 ng-show="contacts "> <b>Description:</b> {{contacts[$index].description}}</h5>
-
+                                       <!-- <h5 ng-show="contacts "> <b>Nombre de usuario:</b> {{contacts[$index].username}}</h5> -->
+                                        <h5 ng-show="contacts "> <b>Edad:</b> {{contacts[$index].age}}</h5>
+                                        <h5 ng-show="contacts "> <b>Profesión:</b> {{contacts[$index].job}}</h5>
+                                        <h5 ng-show="contacts "> <b>Descripción:</b> {{contacts[$index].description}}</h5>
+                                        <h5 ng-show="contacts "> <b>Intereses:</b> {{contacts[$index].hobby[$index]}}</h5>
+                                            
                                         <br>
                                         <br>
                                         <br>
-
                                         <a class="btn btn-success btn-lg " target="_blank " ng-href="{{copyContacts[$index].location}} " ng-mousedown="openTab() "><i class="fa fa-globe "> </i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <a class="btn btn-info btn-lg" href="tel:{{contacts[$index].phone}}"><i class="fa fa-phone "></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <a class="btn btn-danger btn-lg" href="mailto:{{contacts[$index].email}}"><i class="fa fa fa-envelope "></i></a>
@@ -193,15 +248,16 @@
             </div>
        
         </div>
-        </div>
+    </div>
        
       </div>
-      
-    </div>
+                 </div>
+            
   </div>
   
-</div>
- <!-- UserKnownModal -->
+  
+
+ <!------------------------------------------------------- UserKnownModal ----------------------------------------------------------->
 <div id="userKnownModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -209,12 +265,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h4 class="modal-title">Utiliza tu nombre de usuario para buscar personas</h4>
       </div>
       <div class="modal-body">
         <p>Introduce tu nombre de usuario.</p>
-        <input type=text ng-model =knownUser.username>
-        <button ng-disabled=> Encuentra personas</button>
+        <input type=text ng-model ="knownUser.username">
+        <button ng-disabled="!knownUser.username" Encuentra personas</button>
+            
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
