@@ -5,13 +5,15 @@
         <title>Stumeet</title>
         <!-- Mobile specific metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
-
         <link href="css/icons.css" rel="stylesheet" />
         <link href="css/bootstrap.css" rel="stylesheet" />
         <link href="css/plugins.css" rel="stylesheet" />
         <link href="css/main.css" rel="stylesheet" />
         <link href="css/custom.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script src="https://apis.google.com/js/platform.js" async defer></script>
          <script>
         window.jQuery || document.write('<script src="../js/libs/jquery-2.1.1.min.js">\x3C/script>')
         </script>
@@ -28,6 +30,7 @@
 </head>
 
 <body>
+
       <div id="header" class="page-navbar">
     
             <div id="navbar-no-collapse" class="navbar-no-collapse">
@@ -50,21 +53,8 @@
                    
                 </ul>
                  <ul class="nav navbar-nav navbar-right  hidden-lg  ">
-                        <a>
-                            <i  output id="list" align="left"  class="hidden-md hidden-sm"></i>
-                          
-                           
-                        </a>
-                          
-                            <i  output id="list" align="left"  class="hidden-md hidden-sm">
-                                 <button  type="button" class="btn btn-danger btn-xs" onclick="document.getElementById('files').click()">Upload</button>
-                            <input type='file' id="files" style="display:none">
-                            </i>
-                           
-                           
-                      
-                          
-                         
+                     
+                     
                       
             </div>
             <!-- / collapse -->
@@ -83,37 +73,87 @@
                     </div>
                     <!-- / .sidebar-panel -->
                     <!-- .side-nav -->
-                    <div class="side-nav">
-                        <ul class="nav">
-                            <li><a></a>
+                      
+                       <li><a></a>
+                              
                                 <output id="foto" align="left" class="hidden-md hidden-sm"></output>
-                            </li>
-                            <br>
-                            <div class="m.15">
-                                <button onclick="document.getElementById('photo').click()">File upload</button>
-                                <input type='file' id="photo" style="display:none">
-                            </div>
-
-                        </ul>
-                    </div>
+                     
+                      </li>
+                           <br>
+                    
+                     
                     <!-- / side-nav -->
                     <!--  .sidebar-panel -->
-
                 </div>
                 <!-- End .sidebar-scrollarea -->
             </div>
             <!-- End .sidebar-inner -->
         </aside>
         <!-- / page-sidebar -->
+        
+        <!--View all the contacts -->
         <div class="page-content sidebar-page right-sidebar-page clearfix "  ng-controller="ListCtrl">
+            <h1>Bienvenido a Stumeet</h1>
+            <h4>Antes de nada, introduce tus datos para poder registrarte en nuestra base de datos</h4>
+            <h5>Si ya has introducido tus datos, haz click aquí</h5>
+              <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userKnownModal" >Buscar</button>
+          
             <!-- .page-content-wrapper -->
             <div class="page-content-wrapper ">
                 <div class="page-content-inner ">
                     <!-- Start .page-content-inner -->
                     <div id="page-header " class="clearfix ">
-                        <div class="page-header ">
-                            <h2>View people</h2>
-                            <span class="txt ">Here the details of people could be interested on you!</span>
+                <form name="contactForm">
+                <span> Nombre </span>
+                <input class="form-control" ng-model="newContact.name" > 
+                <span>Nombre de usuario</span>
+                <input  name="Username" class="form-control" ng-model="newContact.username" type="text">
+                 <span>E-mail</span>
+                <input  name="E-mail" class="form-control" ng-model="newContact.mail" type="email">
+                  <span>Edad</span>
+                <input  name="Age" class="form-control" ng-model="newContact.age" type="text">
+                <span>Profesión</span>
+                <input  name="Job" class="form-control" ng-model="newContact.job" type="text">
+                <span>Aficiones</span>
+                 <input  name="Hobbies" class="form-control" ng-model="newContact.hobbies" type="text">
+                     <span>Descripción</span>
+                 <textarea name="Description" class="form-control" ng-model="newContact.description" ></textarea>
+                     <span>Teléfono</span>
+                 <input  name="Phone" class="form-control" ng-model="newContact.phone" type="tel">
+              
+                 <span>Sexo</span> <br>
+            
+                 <input name="Male" ng-model="newContact.sex" type="radio" value="male">  Hombre<br>
+                 <input name="Female" ng-model="newContact.sex" type="radio" value="female"> Mujer<br>
+                  <output id="foto"></output>
+                 <span>Foto del perfil </span> <br> 
+                <input type='file' id="photo"  class="form-control" ng-model="newContact.photo">
+               
+                     
+                   
+                
+        </form>
+          
+                
+<div class="container">
+  
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-disabled="!newContact.name || !newContact.username || !newContact.mail || !newContact.phone|| !newContact.sex
+  " ng-click="addContact()">Buscar</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Find people</h4>
+        </div>
+        <div class="modal-body">
+              <div class="page-header ">
+                            <h2>Here the details of people could be interested on you!</h2>
+                           
                         </div>
 
                     </div>
@@ -121,7 +161,7 @@
 
 
                     <p class="text-center container mt-4 " ng-show="!contacts ">
-                        <div class="card " ng-repeat="contact in contacts " ng-cloak>
+                        <div class="card " ng-repeat="contact in contacts" ng-if="contact.sex !=newContact.sex" ng-cloak>
                             <div class="panel-body ">
                                 <div class="row profile ">
                                     <div class="col-md-6 ">
@@ -133,8 +173,6 @@
                                         <br>
                                         <br>
                                         <h5 ng-show="contacts "> <b>Username:</b> {{contacts[$index].username}}</h5>
-                                        <h5 ng-show="contacts "> <b>Phone:</b> {{contacts[$index].phone}}</h5>
-                                        <h5 ng-show="contacts "> <b>E-mail:</b> {{contacts[$index].mail}}</h5>
                                         <h5 ng-show="contacts "> <b>Age:</b> {{contacts[$index].age}}</h5>
                                         <h5 ng-show="contacts "> <b>Job:</b> {{contacts[$index].job}}</h5>
                                         <h5 ng-show="contacts "> <b>Description:</b> {{contacts[$index].description}}</h5>
@@ -144,7 +182,8 @@
                                         <br>
 
                                         <a class="btn btn-success btn-lg " target="_blank " ng-href="{{copyContacts[$index].location}} " ng-mousedown="openTab() "><i class="fa fa-globe "> </i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a class="btn btn-info btn-lg" href="tel:{{contacts[$index].phone}}"><i class="fa fa-phone "></i></a>
+                                        <a class="btn btn-info btn-lg" href="tel:{{contacts[$index].phone}}"><i class="fa fa-phone "></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a class="btn btn-danger btn-lg" href="mailto:{{contacts[$index].email}}"><i class="fa fa fa-envelope "></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +191,39 @@
                     </p>
                 </div>
             </div>
+       
         </div>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+ <!-- UserKnownModal -->
+<div id="userKnownModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Introduce tu nombre de usuario.</p>
+        <input type=text ng-model =knownUser.username>
+        <button ng-disabled=> Encuentra personas</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+                 
           <script>
             if (window.FileReader) {
                 function handleFileSelect(evt) {
@@ -173,7 +244,7 @@
                 alert('This browser does not support FileReader');
             }
             document.getElementById('files').addEventListener('change', handleFileSelect, false);
-           
+
         </script>
       
         <script>

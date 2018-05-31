@@ -1,0 +1,98 @@
+
+<!-- Add researcher modal -->
+<div class="modal fade" id="addResearcherModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add researcher</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form name="addResearcherForm">
+          <div class="input-group input-group-sm mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-new-name">Name</span>
+            </div>
+            <input ng-class="{'is-invalid': !addResearcherForm.name.$valid}" name="name" required type="text" class="form-control" aria-label="Name" aria-describedby="inputGroup-new-name" ng-model="newResearcher.name">
+          </div>
+          <div class="input-group input-group-sm mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-new-mail">Mail</span>
+            </div>
+            <input ng-class="{'is-invalid': !addResearcherForm.mail.$valid}" name="mail" required type="text" class="form-control" aria-label="Mail" aria-describedby="inputGroup-new-mail" ng-model="newResearcher.mail">
+          </div>
+          <div class="input-group input-group-sm mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-new-researchGroupName">Research group name</span>
+            </div>
+            <input ng-class="{'is-invalid': !addResearcherForm.researchGroupName.$valid}" name="researchGroupName" required type="text" class="form-control" aria-label="Research group name" aria-describedby="inputGroup-new-researchGroupName" ng-model="newResearcher.researchGroup.name">
+          </div>
+          <div class="input-group input-group-sm mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-new-researchGroupWebsite">Research group website</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Research group website" aria-describedby="inputGroup-new-researchGroupWebsite" ng-model="newResearcher.researchGroup.website">
+          </div>
+          <div class="input-group input-group-sm mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-new-phone">Phone</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Phone" aria-describedby="inputGroup-new-phone" ng-model="newResearcher.phone">
+          </div>
+          <div class="input-group input-group-sm mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-new-website">Website</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Website" aria-describedby="inputGroup-new-website" ng-model="newResearcher.website">
+          </div>
+          <div class="input-group input-group-sm mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-new-orcid">ORCID</span>
+            </div>
+            <input ng-class="{'is-invalid': !addResearcherForm.orcid.$valid}" ng-pattern="/^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/" type="text" required name="orcid" class="form-control"  aria-label="ORCID" aria-describedby="inputGroup-new-orcid" ng-model="newResearcher.ORCID">
+          </div>
+          <div class="input-group input-group-sm mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-new-researcherID">ResearcherID</span>
+            </div>
+            <input type="text" class="form-control" aria-label="ResearcherID" aria-describedby="inputGroup-new-researcherID" ng-model="newResearcher.researcherID">
+          </div>
+          <div class="input-group input-group-sm mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-new-department">Department</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Department" aria-describedby="inputGroup-new-department" ng-model="newResearcher.department">
+          </div>
+          <div class="input-group input-group-sm mb-1">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-new-university">University</span>
+            </div>
+            <input type="text" class="form-control" aria-label="University" aria-describedby="inputGroup-new-university" ng-model="newResearcher.university">
+          </div>
+          <div ng-repeat="project in newResearcher.projects track by $index">
+            <div class="row row-no-margin">
+              <div class="input-group input-group-sm mb-1 col no-padding">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-project{{$index+1}}New">Project {{$index+1}}</span>
+                </div>
+                <input type="text" class="form-control" name="project{{$index+1}}" required ng-class="{'is-invalid': !addResearcherForm.project{{$index+1}}.$valid}"
+                  aria-label="Project {{$index+1}}" aria-describedby="inputGroup-project{{$index+1}}New" ng-model="newResearcher.projects[$index]">
+              </div>
+              <button type="button" class="btn btn-link align-self-center delete-project-button" ng-click="deleteProject($index, true)">
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-link" ng-click="addProject(true)">
+            Add project
+          </button>
+        </form>
+      </div>
+      <div class="justify-content-center modal-footer">
+        <button type="button" class="btn btn-danger mx-1" data-dismiss="modal" ng-click="newResearcher = null"><i class="fa fa-times "></i> Cancel</button>
+        <button ng-disabled="!addResearcherForm.name.$valid || !addResearcherForm.mail.$valid || !addResearcherForm.researchGroupName.$valid || !addResearcherForm.orcid.$valid" type="button" class="btn btn-info mx-1" data-dismiss="modal" ng-click="addResearcher(); closeAddResearcherModal(); newResearcher = null">
+          <i class="fa fa-save"></i> Add researcher</button>
+      </div>
+    </div>
+  </div>
+</div>

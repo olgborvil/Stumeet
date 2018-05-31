@@ -3,7 +3,7 @@ angular
     .controller("ListCtrl", function($scope,$http) {
         
         console.log("Controller initialized");
-        
+       
       
         	function refresh() {
 			$http.get("api/v1/contacts")
@@ -120,7 +120,9 @@ angular
 			$scope.showEditFields = false;
 		};
 
+     
   
-
-        
+	$scope.closeContactModal = function () {
+			$('#addContactModal').modal('hide');
+		}
     });
